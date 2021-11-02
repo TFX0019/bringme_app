@@ -37,7 +37,8 @@ export class SignupPage implements OnInit {
     
       if(response.msg == "error")
       {
-        this.presentToast(response.error, 'danger');
+        console.log(response);
+        this.presentToast("L'adresse e-mail ou le numéro de téléphone est déjà utilisé", 'danger');
       }
       else
       {

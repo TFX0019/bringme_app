@@ -45,7 +45,7 @@ export class ContactPage implements OnInit {
     await loading.present();
 
     this.server.sendMessage(data).subscribe((response:any) => {
-  
+      console.log(response)
       if(response.data){
         this.presentToast(response.msg);
         this.nav.back();

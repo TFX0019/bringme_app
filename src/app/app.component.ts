@@ -132,7 +132,7 @@ export class AppComponent {
     this.initializeApp();
 
     this.events.subscribe('user_login', (id) => {
-
+      console.log(id)
     this.subPush(id);
 
     });
@@ -165,7 +165,10 @@ export class AppComponent {
 
   subPush(id = 0)
   {
+    // console.log(id)
       this.oneSignal.startInit('e31e68ec-423d-4f71-ac89-9662e906f295', '665736070770');
+
+      // this.oneSignal.getIds
 
         this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
 
@@ -190,6 +193,8 @@ export class AppComponent {
       if(id > 0)
       {
           this.oneSignal.sendTags({user_id: id});
+          // this.oneSignal.getTags
+          
       }
 
       this.oneSignal.endInit();

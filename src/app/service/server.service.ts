@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class ServerService {
   
   //put /api/ after your url e.g https://www.abc.com/api/
-  url = "/api/";
+  url = "https://bringme.sn/api/";
 
   constructor(private http: HttpClient) { }
 
@@ -41,6 +41,12 @@ export class ServerService {
   {
     return this.http.get(this.url+'homepage/'+city_id)
              .pipe(map(results => results));
+  }
+
+  test()
+  {
+    return this.http.get('http://localhost').pipe(map(result => result));
+
   }
 
   storespage(quartier_id, category_id)
